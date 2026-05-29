@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbon Wire Rod Quote</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: #f3f4f6;
+        padding: 50px 20px;
+        margin: 0;
+        color: #1f2937;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Minimal Top Button Bar */
+    .control-panel {
+        width: 780px;
+        margin: 0 auto 20px auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .btn {
+        background: #ffffff;
+        color: #4b5563;
+        border: 1px solid #d1d5db;
+        padding: 10px 22px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+        background: #f9fafb;
+        border-color: #9ca3af;
+        color: #111827;
+    }
+
+    .btn-print {
+        background: #1f2937;
+        color: #ffffff;
+        border-color: #1f2937;
+    }
+    
+    .btn-print:hover {
+        background: #111827;
+        border-color: #111827;
+        color: #ffffff;
+    }
+
+    .btn-danger {
+        padding: 4px 10px;
+        font-size: 11px;
+        background: #fef2f2;
+        color: #dc2626;
+        border: 1px solid #fee2e2;
+        border-radius: 4px;
+    }
+    .btn-danger:hover {
+        background: #fee2e2;
+        border-color: #dc2626;
+    }
+
+    /* Premium Sleek Paper Frame */
+    .paper {
+        width: 780px;
+        margin: auto;
+        background: white;
+        padding: 60px 65px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+    }
+
+    /* Title Styling */
+    h1 {
+        text-align: center;
+        color: #101011;
+        font-size: 35px;
+        letter-spacing: 3px;
+        margin: 0 0 45px 0;
+        font-weight: 700;
+    }
+    
+    h1 input {
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    /* Info Header (To & Dated) */
+    .info-section {
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 17px;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 20px;
+    }
+
+    .info-section table {
+        width: 100%;
+    }
+
+    .info-section td {
+        padding: 4px 0;
+        border: none !important;
+    }
+
+    .info-section strong {
+        color: #0b0b0c;
+        font-size: 19px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Table Design with Headers */
+    .content-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .content-table th {
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #1a1b1d;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 10px 12px;
+        border-bottom: 1px solid #1a1b1d;
+        text-align: left;
+    }
+
+    .content-table th.right-align {
+        text-align: right;
+    }
+
+    .content-table td {
+        padding: 19px 12px; /* Increased line gap for a premium feel */
+        border-bottom: 1px solid #f3f4f6;
+        font-size: 20px;
+        color: #0f1011;
+    }
+
+    /* Seamless Inputs Styling */
+    input[type="text"] {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: transparent;
+        border: none;
+        padding: 2px 0;
+        outline: none;
+        width: 100%;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s ease;
+    }
+
+    /* Active edit field hint */
+    input[type="text"]:focus {
+        border-bottom: 1px solid #131314;
+    }
+
+    .right-align {
+        text-align: right;
+    }
+    
+    .content-table td:nth-child(2) input {
+        text-align: right;
+        font-weight: 500;
+    }
+
+    /* Total Section - Sleek Minimalist Highlight */
+    .total-section {
+        margin-top: 55px;
+        background: #f9fafb;
+        border-radius: 6px;
+        padding: 22px 22px;
+        text-align: center;
+        font-size: 23px;
+        font-weight: 700;
+        color: #111827;
+        letter-spacing: 1px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .total-section input {
+        font-weight: 700;
+        text-align: center;
+        color: #111827;
+    }
+
+    .price-highlight {
+        color: #15803d; /* Professional Forest Green */
+        font-size: 28px;
+        width: 130px !important;
+    }
+
+    .btn-row {
+        width: 40px;
+        text-align: right;
+    }
+
+    /* PERFECT PRINT HANDLING */
+    @media print {
+        @page {
+            margin: 0;
+        }
+        body {
+            background: white;
+            padding: 60px;
+        }
+        .paper {
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+            width: 100%;
+            padding: 0;
+        }
+        .control-panel, .btn-row, .delete-header {
+            display: none !important;
+        }
+        .total-section {
+            background: #f9fafb !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        input[type="text"]:focus {
+            border-bottom: none;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="control-panel">
+    <button class="btn" onclick="addRow()">➕ Add Line</button>
+    <button class="btn btn-print" onclick="window.print()">🖨️ Print Quote</button>
+</div>
+
+<div class="paper">
+
+    <h1><input type="text" value="CARBON WIRE ROD"></h1>
+
+    <div class="info-section">
+        <table>
+            <tr>
+                <td style="width: 40px;"><strong>I/O:</strong></td>
+                <td><input type="text" value="China" style="width: 250px; font-weight: 600;"></td>
+                <td class="right-align" style="width: 80px;"><strong>DATED:</strong></td>
+                <td class="right-align" style="width: 120px;"><input type="text" value="24/02/2026" class="right-align" style="font-weight: 600;"></td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="content-table" id="quoteTable">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th class="right-align">Amount</th>
+                <th class="delete-header" style="width: 40px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="LME:"></td>
+                <td><input type="text" value="$ 480 - 485"></td>
+                <td class="btn-row"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Average:"></td>
+                <td><input type="text" value="$ 482.50"></td>
+                <td class="btn-row"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Add 5%:"></td>
+                <td><input type="text" value="$ 506.63"></td>
+                <td class="btn-row"></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Add Freight:"></td>
+                <td><input type="text" value="$ 35.00"></td>
+                <td class="btn-row"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        TOTAL US <input type="text" value="$" style="width: 20px;"> 
+        <input type="text" class="price-highlight" value="541.63"> 
+        <input type="text" value="/MT AS PER LME" style="width: 200px;">
+    </div>
+
+</div>
+
+<script>
+function addRow() {
+    var table = document.getElementById("quoteTable").getElementsByTagName('tbody')[0];
+    var row = table.insertRow(-1);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+    cell1.innerHTML = '<input type="text" value="New Item Description">';
+    cell2.innerHTML = '<input type="text" value="$ 0.00">';
+    cell3.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">❌</button>';
+    
+    cell3.className = "btn-row";
+}
+
+function deleteRow(button) {
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+</script>
+
+</body>
+</html>
